@@ -5,8 +5,10 @@ import shutil
 import authentication
 import random
 
+PROG_DIR = os.path.dirname(os.path.realpath(__file__))
+
 homedir = os.path.expanduser('~')
-default_configfile = os.getcwd()+"/share/config.conf"
+default_configfile = PROG_DIR + "/share/config.conf"
 
 config = ConfigParser.ConfigParser()
 configdir = homedir + "/.deskcon/"
