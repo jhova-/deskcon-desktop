@@ -6,12 +6,14 @@ import configmanager
 import json
 from gi.repository import Gtk, GObject
 
+PROG_DIR = os.path.dirname(os.path.realpath(__file__))
+
 class EntryWindow():
 
     def __init__(self):
-
+        
         builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd()+"/share/ui/settings.glade")
+        builder.add_from_file(PROG_DIR + "/share/ui/settings.glade")
         builder.connect_signals(self)
         self.window = builder.get_object("settingswindow")
         self.ipentry = builder.get_object("ipentry")

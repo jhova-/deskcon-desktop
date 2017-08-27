@@ -8,12 +8,14 @@ import json
 from OpenSSL import SSL, crypto
 from gi.repository import Gtk, GObject
 
+PROG_DIR = os.path.dirname(os.path.realpath(__file__))
+
 class EntryWindow():
 
     def __init__(self, ip, port, number):
 
         builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd()+"/share/ui/sms.glade")
+        builder.add_from_file(PROG_DIR + "/share/ui/sms.glade")
         builder.connect_signals(self)
         self.window = builder.get_object("smswindow")
         self.numberentry = builder.get_object("numberentry")

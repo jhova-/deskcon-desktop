@@ -11,11 +11,13 @@ from multiprocessing import Process, Queue
 import threading
 import thread
 
+PROG_DIR = os.path.dirname(os.path.realpath(__file__))
+
 class EntryWindow():
 
     def __init__(self):
         builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd()+"/share/ui/pairingwindow.glade")
+        builder.add_from_file(PROG_DIR + "/share/ui/pairingwindow.glade")
         builder.connect_signals(self)
         self.window = builder.get_object("pairingwindow")
         self.notebook = builder.get_object("notebook1")
