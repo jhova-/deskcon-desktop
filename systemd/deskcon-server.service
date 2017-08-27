@@ -1,0 +1,10 @@
+[Unit]
+Description=DeskCon Server Unit
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/deskcon-server
+
+[Install]
+WantedBy=multi-user.target
